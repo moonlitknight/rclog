@@ -1,0 +1,24 @@
+{
+  "name": "rclog",
+  "author": {
+    "name": "Moonlitknight"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+  },
+  "deprecated": false,
+  "description": "Library to reflect console output to an adjacent window and remote node server",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node server.js",
+    "start": "node server.js",
+    "test": "curl -v -d '{\"cm\":\"error\",\"args\":[{\"foo\":\"arg1\"},\"arg2\"]}' -H 'Content-type: application/json' localhost:4000/console"
+  },
+  "version": "0.4.0",
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
