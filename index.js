@@ -16,7 +16,7 @@ export const rclog = (serverUrl) => {
                           'Content-Type': 'application/json'
                         },
                         body: JSON.stringify({cm:c, args:[...arguments]})
-                    }).catch(()=>{console.__serverUrl = undefined; return});  // if post fails, do nothing to prevent a recursive log loop
+                    }).catch((err)=>{console.__serverUrl = undefined; console.error(err); return});  // if post fails, delete serverUrl to prevent subsequent posts and log error
                 }
             }
         }
