@@ -23,6 +23,7 @@ app.use(cors());
 app.post(path, (req, res) => {
   res.json({ message: "OK" });     // respond with anything - not used by client
   //console.log(req.body);
+  req.body.cm = req.body.cm=='trace'?'log':req.body.cm;  // trace -> log
   console[req.body.cm](...req.body.args);   // convert body pack to its original console.xx and execute it
 });
 
