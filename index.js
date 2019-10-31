@@ -1,4 +1,4 @@
-// app calls import {rclog} from 'rclog'; rclog('http://myserver:8400/console);
+// app calls import {rclog} from 'rclog'; rclog('https://myserver:8400/console);
 export const rclog = (serverUrl) => {
     // if no console, do nothing
     if (window.console && console) {

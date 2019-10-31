@@ -4,7 +4,10 @@
     "name": "Moonlitknight"
   },
   "bundleDependencies": false,
-  "dependencies": {},
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "https": "^1.0.0"
+  },
   "deprecated": false,
   "description": "Library to reflect console output to an adjacent window and remote node server",
   "license": "ISC",
