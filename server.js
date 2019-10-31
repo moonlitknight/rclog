@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const body_parser = require('body-parser');
+const http = require('http');
 const https = require('https');
 const fs = require('fs');
 
@@ -25,9 +26,13 @@ app.post(path, (req, res) => {
   console[req.body.cm](...req.body.args);   // convert body pack to its original console.xx and execute it
 });
 
-var server = https.createServer(options, app);
+var server = http.createServer(undefined, app);
 server.listen(port, () => {
-  console.log(`Server listening for POSTs to :${port}${path}`);
+  console.log(`http server listening for POSTs to :${port}${path}`);
+});
+var sserver = https.createServer(options, app);
+sserver.listen(port+1, () => {
+  console.log(`https server listening for POSTs to :${port+1}${path}`);
 });
 
 
